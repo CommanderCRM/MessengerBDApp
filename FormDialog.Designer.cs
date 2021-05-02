@@ -238,7 +238,7 @@
             // 
             // количество_участниковTextBox
             // 
-            this.количество_участниковTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.беседаBindingSource, "Количество_участников", true));
+            this.количество_участниковTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.беседаBindingSource, "Количество_пользователей", true));
             this.количество_участниковTextBox.Location = new System.Drawing.Point(147, 58);
             this.количество_участниковTextBox.Name = "количество_участниковTextBox";
             this.количество_участниковTextBox.Size = new System.Drawing.Size(100, 20);

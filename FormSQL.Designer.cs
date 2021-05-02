@@ -293,7 +293,7 @@
             // 
             // textBoxChat
             // 
-            this.textBoxChat.Location = new System.Drawing.Point(95, 16);
+            this.textBoxChat.Location = new System.Drawing.Point(125, 16);
             this.textBoxChat.Name = "textBoxChat";
             this.textBoxChat.Size = new System.Drawing.Size(184, 20);
             this.textBoxChat.TabIndex = 1;
@@ -301,11 +301,12 @@
             // labelChat
             // 
             this.labelChat.AutoSize = true;
-            this.labelChat.Location = new System.Drawing.Point(6, 16);
+            this.labelChat.Location = new System.Drawing.Point(7, 19);
             this.labelChat.Name = "labelChat";
-            this.labelChat.Size = new System.Drawing.Size(82, 13);
+            this.labelChat.Size = new System.Drawing.Size(112, 13);
             this.labelChat.TabIndex = 0;
-            this.labelChat.Text = "Название чата";
+            this.labelChat.Text = "Идентификатор чата";
+            this.labelChat.Click += new System.EventHandler(this.labelChat_Click);
             // 
             // tabPageSubquery
             // 

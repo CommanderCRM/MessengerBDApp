@@ -239,7 +239,7 @@
             // 
             // количество_подписчиковTextBox
             // 
-            this.количество_подписчиковTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.каналBindingSource, "Количество_подписчиков", true));
+            this.количество_подписчиковTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.каналBindingSource, "Количество_пользователей", true));
             this.количество_подписчиковTextBox.Location = new System.Drawing.Point(155, 58);
             this.количество_подписчиковTextBox.Name = "количество_подписчиковTextBox";
             this.количество_подписчиковTextBox.Size = new System.Drawing.Size(100, 20);

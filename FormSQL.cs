@@ -18,7 +18,7 @@ namespace MessengerBDApp
             //CafeConnectionString – строка описания соединения с источником данных
 
             SqlConnection connection = new
-            SqlConnection(Properties.Settings.Default.MessengerConnectionString);
+            SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
             //Создаем объект command для SQL команды
             SqlCommand command = connection.CreateCommand();
             //Заносим текст SQL запроса через параметр sqlSelect
@@ -103,7 +103,7 @@ namespace MessengerBDApp
                 sqlSelect += "ORDER BY Количество_пользователей DESC";
             }
 
-            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString);
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
             SqlCommand command = connection.CreateCommand();
             command.CommandText = sqlSelect;
             command.Parameters.AddWithValue("@id", textBoxChat.Text + "%");
@@ -153,7 +153,7 @@ namespace MessengerBDApp
                 return;
             }
             SqlConnection connection = new
-            SqlConnection(Properties.Settings.Default.MessengerConnectionString);
+            SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
             SqlCommand command = connection.CreateCommand();
             command.CommandText = sqlSelect;
             try
@@ -176,7 +176,7 @@ namespace MessengerBDApp
         void InsertChat()
         {
             string sqlInsert = @"INSERT INTO Секретный_чат (Идентификатор_чата, Тип_шифрования, Ключ_шифрования, Время_до_удаления_сообщения) VALUES (@id, @CType, @CKey, @CTime)";
-            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString);
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandText = sqlInsert;
@@ -191,7 +191,7 @@ namespace MessengerBDApp
         void UpdateChat()
         {
             string sqlUpdate = "UPDATE Секретный_чат SET {0} WHERE Идентификатор_чата = @id"; 
-            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString);
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             string sqlValues = "";
@@ -218,7 +218,7 @@ namespace MessengerBDApp
         void DeleteChat()
         {
             string sqlDelete = @"DELETE FROM Секретный_чат WHERE Идентификатор_чата=@id";
-            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString);
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandText = sqlDelete;
@@ -253,6 +253,11 @@ namespace MessengerBDApp
             else
                 MessageBox.Show("Вы не выбрали действие", "Внимание",
                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        }
+
+        private void labelChat_Click(object sender, EventArgs e)
+        {
 
         }
     }

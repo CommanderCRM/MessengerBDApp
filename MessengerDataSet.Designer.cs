@@ -735,7 +735,7 @@ namespace MessengerBDApp {
             
             private global::System.Data.DataColumn columnИдентификатор_чата;
             
-            private global::System.Data.DataColumn columnКоличество_участников;
+            private global::System.Data.DataColumn columnКоличество_пользователей;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -780,9 +780,9 @@ namespace MessengerBDApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Количество_участниковColumn {
+            public global::System.Data.DataColumn Количество_пользователейColumn {
                 get {
-                    return this.columnКоличество_участников;
+                    return this.columnКоличество_пользователей;
                 }
             }
             
@@ -823,11 +823,11 @@ namespace MessengerBDApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public БеседаRow AddБеседаRow(Тип_чатаRow parentТип_чатаRowByFK_Беседа_Тип_чата, short Количество_участников) {
+            public БеседаRow AddБеседаRow(Тип_чатаRow parentТип_чатаRowByFK_Беседа_Тип_чата, short Количество_пользователей) {
                 БеседаRow rowБеседаRow = ((БеседаRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Количество_участников};
+                        Количество_пользователей};
                 if ((parentТип_чатаRowByFK_Беседа_Тип_чата != null)) {
                     columnValuesArray[0] = parentТип_чатаRowByFK_Беседа_Тип_чата[0];
                 }
@@ -861,7 +861,7 @@ namespace MessengerBDApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnИдентификатор_чата = base.Columns["Идентификатор_чата"];
-                this.columnКоличество_участников = base.Columns["Количество_участников"];
+                this.columnКоличество_пользователей = base.Columns["Количество_пользователей"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -869,14 +869,15 @@ namespace MessengerBDApp {
             private void InitClass() {
                 this.columnИдентификатор_чата = new global::System.Data.DataColumn("Идентификатор_чата", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnИдентификатор_чата);
-                this.columnКоличество_участников = new global::System.Data.DataColumn("Количество_участников", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКоличество_участников);
+                this.columnКоличество_пользователей = new global::System.Data.DataColumn("Количество_пользователей", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКоличество_пользователей);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnИдентификатор_чата}, true));
                 this.columnИдентификатор_чата.AllowDBNull = false;
                 this.columnИдентификатор_чата.Unique = true;
                 this.columnИдентификатор_чата.MaxLength = 50;
-                this.columnКоличество_участников.AllowDBNull = false;
+                this.columnКоличество_пользователей.AllowDBNull = false;
+                this.columnКоличество_пользователей.Caption = "Количество_участников";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1012,7 +1013,7 @@ namespace MessengerBDApp {
             
             private global::System.Data.DataColumn columnИдентификатор_чата;
             
-            private global::System.Data.DataColumn columnКоличество_подписчиков;
+            private global::System.Data.DataColumn columnКоличество_пользователей;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1057,9 +1058,9 @@ namespace MessengerBDApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Количество_подписчиковColumn {
+            public global::System.Data.DataColumn Количество_пользователейColumn {
                 get {
-                    return this.columnКоличество_подписчиков;
+                    return this.columnКоличество_пользователей;
                 }
             }
             
@@ -1100,11 +1101,11 @@ namespace MessengerBDApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public КаналRow AddКаналRow(Тип_чатаRow parentТип_чатаRowByFK_Канал_Тип_чата, short Количество_подписчиков) {
+            public КаналRow AddКаналRow(Тип_чатаRow parentТип_чатаRowByFK_Канал_Тип_чата, short Количество_пользователей) {
                 КаналRow rowКаналRow = ((КаналRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Количество_подписчиков};
+                        Количество_пользователей};
                 if ((parentТип_чатаRowByFK_Канал_Тип_чата != null)) {
                     columnValuesArray[0] = parentТип_чатаRowByFK_Канал_Тип_чата[0];
                 }
@@ -1138,7 +1139,7 @@ namespace MessengerBDApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnИдентификатор_чата = base.Columns["Идентификатор_чата"];
-                this.columnКоличество_подписчиков = base.Columns["Количество_подписчиков"];
+                this.columnКоличество_пользователей = base.Columns["Количество_пользователей"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1146,14 +1147,15 @@ namespace MessengerBDApp {
             private void InitClass() {
                 this.columnИдентификатор_чата = new global::System.Data.DataColumn("Идентификатор_чата", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnИдентификатор_чата);
-                this.columnКоличество_подписчиков = new global::System.Data.DataColumn("Количество_подписчиков", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКоличество_подписчиков);
+                this.columnКоличество_пользователей = new global::System.Data.DataColumn("Количество_пользователей", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКоличество_пользователей);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnИдентификатор_чата}, true));
                 this.columnИдентификатор_чата.AllowDBNull = false;
                 this.columnИдентификатор_чата.Unique = true;
                 this.columnИдентификатор_чата.MaxLength = 50;
-                this.columnКоличество_подписчиков.AllowDBNull = false;
+                this.columnКоличество_пользователей.AllowDBNull = false;
+                this.columnКоличество_пользователей.Caption = "Количество_подписчиков";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4288,12 +4290,12 @@ namespace MessengerBDApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short Количество_участников {
+            public short Количество_пользователей {
                 get {
-                    return ((short)(this[this.tableБеседа.Количество_участниковColumn]));
+                    return ((short)(this[this.tableБеседа.Количество_пользователейColumn]));
                 }
                 set {
-                    this[this.tableБеседа.Количество_участниковColumn] = value;
+                    this[this.tableБеседа.Количество_пользователейColumn] = value;
                 }
             }
             
@@ -4336,12 +4338,12 @@ namespace MessengerBDApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short Количество_подписчиков {
+            public short Количество_пользователей {
                 get {
-                    return ((short)(this[this.tableКанал.Количество_подписчиковColumn]));
+                    return ((short)(this[this.tableКанал.Количество_пользователейColumn]));
                 }
                 set {
-                    this[this.tableКанал.Количество_подписчиковColumn] = value;
+                    this[this.tableКанал.Количество_пользователейColumn] = value;
                 }
             }
             
@@ -5763,32 +5765,34 @@ namespace MessengerBDApp.MessengerDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Беседа";
             tableMapping.ColumnMappings.Add("Идентификатор_чата", "Идентификатор_чата");
-            tableMapping.ColumnMappings.Add("Количество_участников", "Количество_участников");
+            tableMapping.ColumnMappings.Add("Количество_пользователей", "Количество_пользователей");
+            tableMapping.ColumnMappings.Add("Количество_участников", "Количество_пользователей");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Беседа] WHERE (([Идентификатор_чата] = @Original_Идентификатор" +
-                "_чата) AND ([Количество_участников] = @Original_Количество_участников))";
+                "_чата) AND ([Количество_пользователей] = @Original_Количество_пользователей))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_участников", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_участников", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Беседа] ([Идентификатор_чата], [Количество_участников]) VALUES" +
-                " (@Идентификатор_чата, @Количество_участников);\r\nSELECT Идентификатор_чата, Коли" +
-                "чество_участников FROM Беседа WHERE (Идентификатор_чата = @Идентификатор_чата)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Беседа] ([Идентификатор_чата], [Количество_пользователей]) VAL" +
+                "UES (@Идентификатор_чата, @Количество_пользователей);\r\nSELECT Идентификатор_чата" +
+                ", Количество_пользователей FROM Беседа WHERE (Идентификатор_чата = @Идентификато" +
+                "р_чата)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_участников", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_участников", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Беседа] SET [Идентификатор_чата] = @Идентификатор_чата, [Количество_участников] = @Количество_участников WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Количество_участников] = @Original_Количество_участников));
-SELECT Идентификатор_чата, Количество_участников FROM Беседа WHERE (Идентификатор_чата = @Идентификатор_чата)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Беседа] SET [Идентификатор_чата] = @Идентификатор_чата, [Количество_пользователей] = @Количество_пользователей WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Количество_пользователей] = @Original_Количество_пользователей));
+SELECT Идентификатор_чата, Количество_пользователей FROM Беседа WHERE (Идентификатор_чата = @Идентификатор_чата)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_участников", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_участников", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_участников", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_участников", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5804,7 +5808,7 @@ SELECT Идентификатор_чата, Количество_участни�
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Идентификатор_чата, Количество_участников FROM dbo.Беседа";
+            this._commandCollection[0].CommandText = "SELECT Идентификатор_чата, Количество_пользователей FROM dbo.Беседа";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5859,105 +5863,6 @@ SELECT Идентификатор_чата, Количество_участни�
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Идентификатор_чата, short Original_Количество_участников) {
-            if ((Original_Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Original_Идентификатор_чата");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Идентификатор_чата));
-            }
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_Количество_участников));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Идентификатор_чата, short Количество_участников) {
-            if ((Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Идентификатор_чата");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Идентификатор_чата));
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(Количество_участников));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Идентификатор_чата, short Количество_участников, string Original_Идентификатор_чата, short Original_Количество_участников) {
-            if ((Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Идентификатор_чата");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Идентификатор_чата));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(Количество_участников));
-            if ((Original_Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Original_Идентификатор_чата");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Идентификатор_чата));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Original_Количество_участников));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short Количество_участников, string Original_Идентификатор_чата, short Original_Количество_участников) {
-            return this.Update(Original_Идентификатор_чата, Количество_участников, Original_Идентификатор_чата, Original_Количество_участников);
         }
     }
     
@@ -6083,32 +5988,34 @@ SELECT Идентификатор_чата, Количество_участни�
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Канал";
             tableMapping.ColumnMappings.Add("Идентификатор_чата", "Идентификатор_чата");
-            tableMapping.ColumnMappings.Add("Количество_подписчиков", "Количество_подписчиков");
+            tableMapping.ColumnMappings.Add("Количество_пользователей", "Количество_пользователей");
+            tableMapping.ColumnMappings.Add("Количество_подписчиков", "Количество_пользователей");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Канал] WHERE (([Идентификатор_чата] = @Original_Идентификатор_" +
-                "чата) AND ([Количество_подписчиков] = @Original_Количество_подписчиков))";
+                "чата) AND ([Количество_пользователей] = @Original_Количество_пользователей))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_подписчиков", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_подписчиков", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Канал] ([Идентификатор_чата], [Количество_подписчиков]) VALUES" +
-                " (@Идентификатор_чата, @Количество_подписчиков);\r\nSELECT Идентификатор_чата, Кол" +
-                "ичество_подписчиков FROM Канал WHERE (Идентификатор_чата = @Идентификатор_чата)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Канал] ([Идентификатор_чата], [Количество_пользователей]) VALU" +
+                "ES (@Идентификатор_чата, @Количество_пользователей);\r\nSELECT Идентификатор_чата," +
+                " Количество_пользователей FROM Канал WHERE (Идентификатор_чата = @Идентификатор_" +
+                "чата)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_подписчиков", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_подписчиков", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Канал] SET [Идентификатор_чата] = @Идентификатор_чата, [Количество_подписчиков] = @Количество_подписчиков WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Количество_подписчиков] = @Original_Количество_подписчиков));
-SELECT Идентификатор_чата, Количество_подписчиков FROM Канал WHERE (Идентификатор_чата = @Идентификатор_чата)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Канал] SET [Идентификатор_чата] = @Идентификатор_чата, [Количество_пользователей] = @Количество_пользователей WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Количество_пользователей] = @Original_Количество_пользователей));
+SELECT Идентификатор_чата, Количество_пользователей FROM Канал WHERE (Идентификатор_чата = @Идентификатор_чата)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_подписчиков", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_подписчиков", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Идентификатор_чата", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Идентификатор_чата", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_подписчиков", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_подписчиков", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Количество_пользователей", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Количество_пользователей", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6124,7 +6031,7 @@ SELECT Идентификатор_чата, Количество_подписч�
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Идентификатор_чата, Количество_подписчиков FROM dbo.Канал";
+            this._commandCollection[0].CommandText = "SELECT Идентификатор_чата, Количество_пользователей FROM dbo.Канал";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6179,105 +6086,6 @@ SELECT Идентификатор_чата, Количество_подписч�
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Идентификатор_чата, short Original_Количество_подписчиков) {
-            if ((Original_Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Original_Идентификатор_чата");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Идентификатор_чата));
-            }
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_Количество_подписчиков));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Идентификатор_чата, short Количество_подписчиков) {
-            if ((Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Идентификатор_чата");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Идентификатор_чата));
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(Количество_подписчиков));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Идентификатор_чата, short Количество_подписчиков, string Original_Идентификатор_чата, short Original_Количество_подписчиков) {
-            if ((Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Идентификатор_чата");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Идентификатор_чата));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(Количество_подписчиков));
-            if ((Original_Идентификатор_чата == null)) {
-                throw new global::System.ArgumentNullException("Original_Идентификатор_чата");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Идентификатор_чата));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Original_Количество_подписчиков));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short Количество_подписчиков, string Original_Идентификатор_чата, short Original_Количество_подписчиков) {
-            return this.Update(Original_Идентификатор_чата, Количество_подписчиков, Original_Идентификатор_чата, Original_Количество_подписчиков);
         }
     }
     
