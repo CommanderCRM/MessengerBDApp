@@ -35,7 +35,7 @@ namespace MessengerBDApp
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("(C)ТУСУР, БИС, Кривошеин Илья Андреевич, 748, 2020", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("(C) ТУСУР, БИС, Кривошеин Илья Андреевич, группа 748, 2021", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)

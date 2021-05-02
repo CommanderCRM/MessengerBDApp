@@ -68,7 +68,7 @@
             // 
             // тип_чатаBindingSource
             // 
-            this.тип_чатаBindingSource.DataMember = "Тип чата";
+            this.тип_чатаBindingSource.DataMember = "Тип_чата";
             this.тип_чатаBindingSource.DataSource = this.messengerDataSet;
             // 
             // тип_чатаTableAdapter

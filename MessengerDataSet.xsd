@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MessengerConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MessengerConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MessengerBDApp.Properties.Settings.GlobalReference.Default.MessengerConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MessengerConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MessengerConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MessengerBDApp.Properties.Settings.GlobalReference.Default.MessengerConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="БеседаTableAdapter" GeneratorDataComponentClassName="БеседаTableAdapter" Name="Беседа" UserDataComponentName="БеседаTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.Беседа" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Беседа" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Беседа] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Количество_участников] = @Original_Количество_участников))</CommandText>
@@ -30,8 +30,8 @@ SELECT Идентификатор_чата, Количество_участни�
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Идентификатор_чата, [Количество_участников] FROM dbo.Беседа</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор_чата, Количество_участников FROM dbo.Беседа</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -51,13 +51,13 @@ SELECT Идентификатор_чата, Количество_участни�
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="Идентификатор_чата" DataSetColumn="Идентификатор_чата" />
-              <Mapping SourceColumn="Количество_пользователей" DataSetColumn="Количество_пользователей" />
+              <Mapping SourceColumn="Количество_участников" DataSetColumn="Количество_участников" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="КаналTableAdapter" GeneratorDataComponentClassName="КаналTableAdapter" Name="Канал" UserDataComponentName="КаналTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.Канал" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Канал" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Канал] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Количество_подписчиков] = @Original_Количество_подписчиков))</CommandText>
@@ -78,8 +78,8 @@ SELECT Идентификатор_чата, Количество_подписч�
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Идентификатор_чата, [Количество_подписчиков] FROM dbo.Канал</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор_чата, Количество_подписчиков FROM dbo.Канал</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -99,80 +99,78 @@ SELECT Идентификатор_чата, Количество_подписч�
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="Идентификатор_чата" DataSetColumn="Идентификатор_чата" />
-              <Mapping SourceColumn="Количество_пользователей" DataSetColumn="Количество_пользователей" />
+              <Mapping SourceColumn="Количество_подписчиков" DataSetColumn="Количество_подписчиков" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Параметры_уведомленийTableAdapter" GeneratorDataComponentClassName="Параметры_уведомленийTableAdapter" Name="Параметры_уведомлений" UserDataComponentName="Параметры_уведомленийTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.[Параметры уведомлений]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Параметры_уведомлений" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Параметры уведомлений] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Логин] = @Original_Логин) AND ((@IsNull_Наличие_звука_уведомления = 1 AND [Наличие_звука_уведомления] IS NULL) OR ([Наличие_звука_уведомления] = @Original_Наличие_звука_уведомления)) AND ((@IsNull_Тип_оповещения = 1 AND [Тип_оповещения] IS NULL) OR ([Тип_оповещения] = @Original_Тип_оповещения)) AND ([Дата_и_время_включения_уведомлений] = @Original_Дата_и_время_включения_уведомлений))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Параметры_уведомлений] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Логин] = @Original_Логин) AND ((@IsNull_Наличие_звука_уведомления = 1 AND [Наличие_звука_уведомления] IS NULL) OR ([Наличие_звука_уведомления] = @Original_Наличие_звука_уведомления)) AND ([Тип_оповещения] = @Original_Тип_оповещения) AND ([Дата_и_время_включения_оповещений] = @Original_Дата_и_время_включения_оповещений))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Логин" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Наличие_звука_уведомления" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Наличие_звука_уведомления" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Наличие_звука_уведомления" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Наличие_звука_уведомления" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Тип_оповещения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Дата_и_время_включения_уведомлений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_уведомлений" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Дата_и_время_включения_оповещений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_оповещений" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Параметры уведомлений] ([Идентификатор_чата], [Логин], [Наличие_звука_уведомления], [Тип_оповещения], [Дата_и_время_включения_уведомлений]) VALUES (@Идентификатор_чата, @Логин, @Наличие_звука_уведомления, @Тип_оповещения, @Дата_и_время_включения_уведомлений);
-SELECT Идентификатор_чата, Логин, Наличие_звука_уведомления, Тип_оповещения, Дата_и_время_включения_уведомлений FROM [Параметры уведомлений] WHERE (Идентификатор_чата = @Идентификатор_чата) AND (Логин = @Логин)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Параметры_уведомлений] ([Идентификатор_чата], [Логин], [Наличие_звука_уведомления], [Тип_оповещения], [Дата_и_время_включения_оповещений]) VALUES (@Идентификатор_чата, @Логин, @Наличие_звука_уведомления, @Тип_оповещения, @Дата_и_время_включения_оповещений);
+SELECT Идентификатор_чата, Логин, Наличие_звука_уведомления, Тип_оповещения, Дата_и_время_включения_оповещений FROM Параметры_уведомлений WHERE (Идентификатор_чата = @Идентификатор_чата) AND (Логин = @Логин)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Логин" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Наличие_звука_уведомления" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Наличие_звука_уведомления" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Дата_и_время_включения_уведомлений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_уведомлений" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Дата_и_время_включения_оповещений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_оповещений" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Идентификатор_чата, Логин, Наличие_звука_уведомления, Тип_оповещения, Дата_и_время_включения_уведомлений FROM [Параметры уведомлений]</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор_чата, Логин, Наличие_звука_уведомления, Тип_оповещения, Дата_и_время_включения_оповещений FROM Параметры_уведомлений</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Параметры уведомлений] SET [Идентификатор_чата] = @Идентификатор_чата, [Логин] = @Логин, [Наличие_звука_уведомления] = @Наличие_звука_уведомления, [Тип_оповещения] = @Тип_оповещения, [Дата_и_время_включения_уведомлений] = @Дата_и_время_включения_уведомлений WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Логин] = @Original_Логин) AND ((@IsNull_Наличие_звука_уведомления = 1 AND [Наличие_звука_уведомления] IS NULL) OR ([Наличие_звука_уведомления] = @Original_Наличие_звука_уведомления)) AND ((@IsNull_Тип_оповещения = 1 AND [Тип_оповещения] IS NULL) OR ([Тип_оповещения] = @Original_Тип_оповещения)) AND ([Дата_и_время_включения_уведомлений] = @Original_Дата_и_время_включения_уведомлений));
-SELECT Идентификатор_чата, Логин, Наличие_звука_уведомления, Тип_оповещения, Дата_и_время_включения_уведомлений FROM [Параметры уведомлений] WHERE (Идентификатор_чата = @Идентификатор_чата) AND (Логин = @Логин)</CommandText>
+                    <CommandText>UPDATE [dbo].[Параметры_уведомлений] SET [Идентификатор_чата] = @Идентификатор_чата, [Логин] = @Логин, [Наличие_звука_уведомления] = @Наличие_звука_уведомления, [Тип_оповещения] = @Тип_оповещения, [Дата_и_время_включения_оповещений] = @Дата_и_время_включения_оповещений WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Логин] = @Original_Логин) AND ((@IsNull_Наличие_звука_уведомления = 1 AND [Наличие_звука_уведомления] IS NULL) OR ([Наличие_звука_уведомления] = @Original_Наличие_звука_уведомления)) AND ([Тип_оповещения] = @Original_Тип_оповещения) AND ([Дата_и_время_включения_оповещений] = @Original_Дата_и_время_включения_оповещений));
+SELECT Идентификатор_чата, Логин, Наличие_звука_уведомления, Тип_оповещения, Дата_и_время_включения_оповещений FROM Параметры_уведомлений WHERE (Идентификатор_чата = @Идентификатор_чата) AND (Логин = @Логин)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Логин" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Наличие_звука_уведомления" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Наличие_звука_уведомления" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Дата_и_время_включения_уведомлений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_уведомлений" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Дата_и_время_включения_оповещений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_оповещений" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Логин" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Логин" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Наличие_звука_уведомления" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Наличие_звука_уведомления" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Наличие_звука_уведомления" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Наличие_звука_уведомления" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Тип_оповещения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Дата_и_время_включения_уведомлений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_уведомлений" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Тип_оповещения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_оповещения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Дата_и_время_включения_оповещений" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_и_время_включения_оповещений" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Логин" DataSetColumn="Логин" />
               <Mapping SourceColumn="Идентификатор_чата" DataSetColumn="Идентификатор_чата" />
+              <Mapping SourceColumn="Логин" DataSetColumn="Логин" />
               <Mapping SourceColumn="Наличие_звука_уведомления" DataSetColumn="Наличие_звука_уведомления" />
               <Mapping SourceColumn="Тип_оповещения" DataSetColumn="Тип_оповещения" />
-              <Mapping SourceColumn="Дата_и_время_включения_уведомлений" DataSetColumn="Дата_и_время_включения_уведомлений" />
+              <Mapping SourceColumn="Дата_и_время_включения_оповещений" DataSetColumn="Дата_и_время_включения_оповещений" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ПользовательTableAdapter" GeneratorDataComponentClassName="ПользовательTableAdapter" Name="Пользователь" UserDataComponentName="ПользовательTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.Пользователь" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Пользователь" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Пользователь] WHERE (([Логин] = @Original_Логин) AND ([Номер_телефона] = @Original_Номер_телефона) AND ([Дата_регистрации] = @Original_Дата_регистрации) AND ([Время_последнего_появления_в_сети] = @Original_Время_последнего_появления_в_сети))</CommandText>
@@ -198,8 +196,8 @@ SELECT Логин, Номер_телефона, Дата_регистрации,
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Логин, Номер_телефона, Дата_регистрации, Аватар_пользователя, Время_последнего_появления_в_сети FROM Пользователь</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Логин, Номер_телефона, Дата_регистрации, Аватар_пользователя, Время_последнего_появления_в_сети FROM dbo.Пользователь</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -233,49 +231,49 @@ SELECT Логин, Номер_телефона, Дата_регистрации,
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Секретный_чатTableAdapter" GeneratorDataComponentClassName="Секретный_чатTableAdapter" Name="Секретный_чат" UserDataComponentName="Секретный_чатTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.[Секретный чат]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Секретный_чат" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Секретный чат] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_шифрования] = @Original_Тип_шифрования) AND ([Ключ_шифрования] = @Original_Ключ_шифрования) AND ([Время_до_удаления_сообщения] = @Original_Время_до_удаления_сообщения))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Секретный_чат] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_шифрования] = @Original_Тип_шифрования) AND ([Ключ_шифрования] = @Original_Ключ_шифрования) AND ([Время_до_удаления_сообщения] = @Original_Время_до_удаления_сообщения))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Тип_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_шифрования" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Ключ_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Ключ_шифрования" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_Время_до_удаления_сообщения" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Время_до_удаления_сообщения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Секретный чат] ([Идентификатор_чата], [Тип_шифрования], [Ключ_шифрования], [Время_до_удаления_сообщения]) VALUES (@Идентификатор_чата, @Тип_шифрования, @Ключ_шифрования, @Время_до_удаления_сообщения);
-SELECT Идентификатор_чата, Тип_шифрования, Ключ_шифрования, Время_до_удаления_сообщения FROM [Секретный чат] WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Секретный_чат] ([Идентификатор_чата], [Тип_шифрования], [Ключ_шифрования], [Время_до_удаления_сообщения]) VALUES (@Идентификатор_чата, @Тип_шифрования, @Ключ_шифрования, @Время_до_удаления_сообщения);
+SELECT Идентификатор_чата, Тип_шифрования, Ключ_шифрования, Время_до_удаления_сообщения FROM Секретный_чат WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_шифрования" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Ключ_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Ключ_шифрования" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Время_до_удаления_сообщения" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Время_до_удаления_сообщения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Идентификатор_чата, [Тип_шифрования], [Ключ_шифрования], [Время_до_удаления_сообщения] FROM dbo.[Секретный чат]</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор_чата, Тип_шифрования, Ключ_шифрования, Время_до_удаления_сообщения FROM dbo.Секретный_чат</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Секретный чат] SET [Идентификатор_чата] = @Идентификатор_чата, [Тип_шифрования] = @Тип_шифрования, [Ключ_шифрования] = @Ключ_шифрования, [Время_до_удаления_сообщения] = @Время_до_удаления_сообщения WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_шифрования] = @Original_Тип_шифрования) AND ([Ключ_шифрования] = @Original_Ключ_шифрования) AND ([Время_до_удаления_сообщения] = @Original_Время_до_удаления_сообщения));
-SELECT Идентификатор_чата, Тип_шифрования, Ключ_шифрования, Время_до_удаления_сообщения FROM [Секретный чат] WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
+                    <CommandText>UPDATE [dbo].[Секретный_чат] SET [Идентификатор_чата] = @Идентификатор_чата, [Тип_шифрования] = @Тип_шифрования, [Ключ_шифрования] = @Ключ_шифрования, [Время_до_удаления_сообщения] = @Время_до_удаления_сообщения WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_шифрования] = @Original_Тип_шифрования) AND ([Ключ_шифрования] = @Original_Ключ_шифрования) AND ([Время_до_удаления_сообщения] = @Original_Время_до_удаления_сообщения));
+SELECT Идентификатор_чата, Тип_шифрования, Ключ_шифрования, Время_до_удаления_сообщения FROM Секретный_чат WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_шифрования" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Ключ_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Ключ_шифрования" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Время_до_удаления_сообщения" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Время_до_удаления_сообщения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Тип_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_шифрования" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Ключ_шифрования" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Ключ_шифрования" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int16" Direction="Input" ParameterName="@Original_Время_до_удаления_сообщения" Precision="0" ProviderType="SmallInt" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Время_до_удаления_сообщения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Время_до_удаления_сообщения" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -291,10 +289,10 @@ SELECT Идентификатор_чата, Тип_шифрования, Клю�
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="СообщениеTableAdapter" GeneratorDataComponentClassName="СообщениеTableAdapter" Name="Сообщение" UserDataComponentName="СообщениеTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.Сообщение" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Сообщение" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Сообщение] WHERE (([Идентификатор_сообщения] = @Original_Идентификатор_сообщения) AND ([Время_отправки] = @Original_Время_отправки) AND ((@IsNull_Статус_отправки = 1 AND [Статус_отправки] IS NULL) OR ([Статус_отправки] = @Original_Статус_отправки)) AND ((@IsNull_Статус_прочтения = 1 AND [Статус_прочтения] IS NULL) OR ([Статус_прочтения] = @Original_Статус_прочтения)) AND ([Отправитель] = @Original_Отправитель) AND ([Чат] = @Original_Чат))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Сообщение] WHERE (([Идентификатор_сообщения] = @Original_Идентификатор_сообщения) AND ([Время_отправки] = @Original_Время_отправки) AND ((@IsNull_Статус_отправки = 1 AND [Статус_отправки] IS NULL) OR ([Статус_отправки] = @Original_Статус_отправки)) AND ((@IsNull_Статус_прочтения = 1 AND [Статус_прочтения] IS NULL) OR ([Статус_прочтения] = @Original_Статус_прочтения)) AND ([Содержимое] = @Original_Содержимое) AND ([Отправитель] = @Original_Отправитель) AND ([Чат] = @Original_Чат) AND ([Статус_доставки] = @Original_Статус_доставки))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Идентификатор_сообщения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_сообщения" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Время_отправки" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Время_отправки" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -302,15 +300,17 @@ SELECT Идентификатор_чата, Тип_шифрования, Клю�
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Статус_отправки" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Статус_отправки" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Статус_прочтения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Статус_прочтения" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Статус_прочтения" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Статус_прочтения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Содержимое" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Содержимое" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Отправитель" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Отправитель" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Чат" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Чат" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Статус_доставки" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Статус_доставки" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[Сообщение] ([Идентификатор_сообщения], [Время_отправки], [Статус_отправки], [Статус_прочтения], [Содержимое], [Отправитель], [Чат]) VALUES (@Идентификатор_сообщения, @Время_отправки, @Статус_отправки, @Статус_прочтения, @Содержимое, @Отправитель, @Чат);
-SELECT Идентификатор_сообщения, Время_отправки, Статус_отправки, Статус_прочтения, Содержимое, Отправитель, Чат FROM Сообщение WHERE (Идентификатор_сообщения = @Идентификатор_сообщения)</CommandText>
+SELECT Идентификатор_сообщения, Время_отправки, Статус_отправки, Статус_прочтения, Содержимое, Отправитель, Чат, Статус_доставки FROM Сообщение WHERE (Идентификатор_сообщения = @Идентификатор_сообщения)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_сообщения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_сообщения" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Время_отправки" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Время_отправки" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -323,15 +323,15 @@ SELECT Идентификатор_сообщения, Время_отправк�
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Идентификатор_сообщения, [Время_отправки], [Статус_отправки], [Статус_прочтения], Содержимое, Отправитель, Чат FROM dbo.Сообщение</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор_сообщения, Время_отправки, Статус_отправки, Статус_прочтения, Содержимое, Отправитель, Чат, Статус_доставки FROM dbo.Сообщение</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Сообщение] SET [Идентификатор_сообщения] = @Идентификатор_сообщения, [Время_отправки] = @Время_отправки, [Статус_отправки] = @Статус_отправки, [Статус_прочтения] = @Статус_прочтения, [Содержимое] = @Содержимое, [Отправитель] = @Отправитель, [Чат] = @Чат WHERE (([Идентификатор_сообщения] = @Original_Идентификатор_сообщения) AND ([Время_отправки] = @Original_Время_отправки) AND ((@IsNull_Статус_отправки = 1 AND [Статус_отправки] IS NULL) OR ([Статус_отправки] = @Original_Статус_отправки)) AND ((@IsNull_Статус_прочтения = 1 AND [Статус_прочтения] IS NULL) OR ([Статус_прочтения] = @Original_Статус_прочтения)) AND ([Отправитель] = @Original_Отправитель) AND ([Чат] = @Original_Чат));
-SELECT Идентификатор_сообщения, Время_отправки, Статус_отправки, Статус_прочтения, Содержимое, Отправитель, Чат FROM Сообщение WHERE (Идентификатор_сообщения = @Идентификатор_сообщения)</CommandText>
+                    <CommandText>UPDATE [dbo].[Сообщение] SET [Идентификатор_сообщения] = @Идентификатор_сообщения, [Время_отправки] = @Время_отправки, [Статус_отправки] = @Статус_отправки, [Статус_прочтения] = @Статус_прочтения, [Содержимое] = @Содержимое, [Отправитель] = @Отправитель, [Чат] = @Чат WHERE (([Идентификатор_сообщения] = @Original_Идентификатор_сообщения) AND ([Время_отправки] = @Original_Время_отправки) AND ((@IsNull_Статус_отправки = 1 AND [Статус_отправки] IS NULL) OR ([Статус_отправки] = @Original_Статус_отправки)) AND ((@IsNull_Статус_прочтения = 1 AND [Статус_прочтения] IS NULL) OR ([Статус_прочтения] = @Original_Статус_прочтения)) AND ([Содержимое] = @Original_Содержимое) AND ([Отправитель] = @Original_Отправитель) AND ([Чат] = @Original_Чат) AND ([Статус_доставки] = @Original_Статус_доставки));
+SELECT Идентификатор_сообщения, Время_отправки, Статус_отправки, Статус_прочтения, Содержимое, Отправитель, Чат, Статус_доставки FROM Сообщение WHERE (Идентификатор_сообщения = @Идентификатор_сообщения)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_сообщения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_сообщения" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Время_отправки" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Время_отправки" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -346,30 +346,33 @@ SELECT Идентификатор_сообщения, Время_отправк�
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Статус_отправки" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Статус_отправки" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Статус_прочтения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Статус_прочтения" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Статус_прочтения" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Статус_прочтения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Содержимое" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Содержимое" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Отправитель" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Отправитель" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Чат" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Чат" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Статус_доставки" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Статус_доставки" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Содержимое" DataSetColumn="Содержимое" />
-              <Mapping SourceColumn="Отправитель" DataSetColumn="Отправитель" />
-              <Mapping SourceColumn="Чат" DataSetColumn="Чат" />
               <Mapping SourceColumn="Идентификатор_сообщения" DataSetColumn="Идентификатор_сообщения" />
               <Mapping SourceColumn="Время_отправки" DataSetColumn="Время_отправки" />
               <Mapping SourceColumn="Статус_отправки" DataSetColumn="Статус_отправки" />
               <Mapping SourceColumn="Статус_прочтения" DataSetColumn="Статус_прочтения" />
+              <Mapping SourceColumn="Содержимое" DataSetColumn="Содержимое" />
+              <Mapping SourceColumn="Отправитель" DataSetColumn="Отправитель" />
+              <Mapping SourceColumn="Чат" DataSetColumn="Чат" />
+              <Mapping SourceColumn="Статус_доставки" DataSetColumn="Статус_доставки" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Тип_чатаTableAdapter" GeneratorDataComponentClassName="Тип_чатаTableAdapter" Name="Тип_чата" UserDataComponentName="Тип_чатаTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.[Тип чата]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Тип_чата" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Тип чата] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_сущности] = @Original_Тип_сущности))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Тип_чата] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_сущности] = @Original_Тип_сущности))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Тип_сущности" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_сущности" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -378,8 +381,8 @@ SELECT Идентификатор_сообщения, Время_отправк�
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Тип чата] ([Идентификатор_чата], [Тип_сущности]) VALUES (@Идентификатор_чата, @Тип_сущности);
-SELECT Идентификатор_чата, Тип_сущности FROM [Тип чата] WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Тип_чата] ([Идентификатор_чата], [Тип_сущности]) VALUES (@Идентификатор_чата, @Тип_сущности);
+SELECT Идентификатор_чата, Тип_сущности FROM Тип_чата WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_сущности" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_сущности" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -387,15 +390,15 @@ SELECT Идентификатор_чата, Тип_сущности FROM [Тип
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Идентификатор_чата, [Тип_сущности] FROM dbo.[Тип чата]</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор_чата, Тип_сущности FROM dbo.Тип_чата</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Тип чата] SET [Идентификатор_чата] = @Идентификатор_чата, [Тип_сущности] = @Тип_сущности WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_сущности] = @Original_Тип_сущности));
-SELECT Идентификатор_чата, Тип_сущности FROM [Тип чата] WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
+                    <CommandText>UPDATE [dbo].[Тип_чата] SET [Идентификатор_чата] = @Идентификатор_чата, [Тип_сущности] = @Тип_сущности WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Тип_сущности] = @Original_Тип_сущности));
+SELECT Идентификатор_чата, Тип_сущности FROM Тип_чата WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Тип_сущности" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Тип_сущности" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -414,10 +417,10 @@ SELECT Идентификатор_чата, Тип_сущности FROM [Тип
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ЧатTableAdapter" GeneratorDataComponentClassName="ЧатTableAdapter" Name="Чат" UserDataComponentName="ЧатTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MessengerConnectionString (Settings)" DbObjectName="lab1.dbo.Чат" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Чат" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Чат] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Название] = @Original_Название))</CommandText>
+                    <CommandText>DELETE FROM [Чат] WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Название] = @Original_Название))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Название" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Название" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -426,7 +429,7 @@ SELECT Идентификатор_чата, Тип_сущности FROM [Тип
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Чат] ([Идентификатор_чата], [Аватар_чата], [Название]) VALUES (@Идентификатор_чата, @Аватар_чата, @Название);
+                    <CommandText>INSERT INTO [Чат] ([Идентификатор_чата], [Аватар_чата], [Название]) VALUES (@Идентификатор_чата, @Аватар_чата, @Название);
 SELECT Идентификатор_чата, Аватар_чата, Название FROM Чат WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -436,14 +439,14 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Идентификатор_чата, [Аватар_чата], Название FROM dbo.Чат</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Идентификатор_чата, Аватар_чата, Название FROM Чат</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Чат] SET [Идентификатор_чата] = @Идентификатор_чата, [Аватар_чата] = @Аватар_чата, [Название] = @Название WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Название] = @Original_Название));
+                    <CommandText>UPDATE [Чат] SET [Идентификатор_чата] = @Идентификатор_чата, [Аватар_чата] = @Аватар_чата, [Название] = @Название WHERE (([Идентификатор_чата] = @Original_Идентификатор_чата) AND ([Название] = @Original_Название));
 SELECT Идентификатор_чата, Аватар_чата, Название FROM Чат WHERE (Идентификатор_чата = @Идентификатор_чата)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Идентификатор_чата" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -457,9 +460,81 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Название" DataSetColumn="Название" />
               <Mapping SourceColumn="Идентификатор_чата" DataSetColumn="Идентификатор_чата" />
               <Mapping SourceColumn="Аватар_чата" DataSetColumn="Аватар_чата" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MessengerTableAdapter" GeneratorDataComponentClassName="MessengerTableAdapter" Name="Messenger" UserDataComponentName="MessengerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Messenger" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Messenger_Result FROM dbo.Messenger(@Логин)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Логин" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@Логин" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Messenger_Result" DataSetColumn="Messenger_Result" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Messenger2TableAdapter" GeneratorDataComponentClassName="Messenger2TableAdapter" Name="Messenger2" UserDataComponentName="Messenger2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Messenger2" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT fn_Messenger2_Result FROM dbo.Messenger2(@Отправитель)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Отправитель" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@Отправитель" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fn_Messenger2_Result" DataSetColumn="fn_Messenger2_Result" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Messenger3TableAdapter" GeneratorDataComponentClassName="Messenger3TableAdapter" Name="Messenger3" UserDataComponentName="Messenger3TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Messenger3" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Messenger3_Result FROM dbo.Messenger3(@Идентификатор_чата)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Идентификатор_чата" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@Идентификатор_чата" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Messenger3_Result" DataSetColumn="Messenger3_Result" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Messenger4TableAdapter" GeneratorDataComponentClassName="Messenger4TableAdapter" Name="Messenger4" UserDataComponentName="Messenger4TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MessengerConnectionString1 (Settings)" DbObjectName="Messenger.dbo.Messenger4" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Messenger4_Result FROM dbo.Messenger4(@Чат)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Чат" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@Чат" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Messenger4_Result" DataSetColumn="Messenger4_Result" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -471,7 +546,7 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
   <xs:element name="MessengerDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MessengerDataSet" msprop:Generator_UserDSName="MessengerDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Беседа" msprop:Generator_TableClassName="БеседаDataTable" msprop:Generator_TableVarName="tableБеседа" msprop:Generator_TablePropName="Беседа" msprop:Generator_RowDeletingName="БеседаRowDeleting" msprop:Generator_RowChangingName="БеседаRowChanging" msprop:Generator_RowEvHandlerName="БеседаRowChangeEventHandler" msprop:Generator_RowDeletedName="БеседаRowDeleted" msprop:Generator_UserTableName="Беседа" msprop:Generator_RowChangedName="БеседаRowChanged" msprop:Generator_RowEvArgName="БеседаRowChangeEvent" msprop:Generator_RowClassName="БеседаRow">
+        <xs:element name="Беседа" msprop:Generator_TableClassName="БеседаDataTable" msprop:Generator_TableVarName="tableБеседа" msprop:Generator_RowChangedName="БеседаRowChanged" msprop:Generator_TablePropName="Беседа" msprop:Generator_RowDeletingName="БеседаRowDeleting" msprop:Generator_RowChangingName="БеседаRowChanging" msprop:Generator_RowEvHandlerName="БеседаRowChangeEventHandler" msprop:Generator_RowDeletedName="БеседаRowDeleted" msprop:Generator_RowClassName="БеседаRow" msprop:Generator_UserTableName="Беседа" msprop:Generator_RowEvArgName="БеседаRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_чата" msprop:Generator_ColumnPropNameInRow="Идентификатор_чата" msprop:Generator_ColumnPropNameInTable="Идентификатор_чатаColumn" msprop:Generator_UserColumnName="Идентификатор_чата">
@@ -481,11 +556,11 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Количество_пользователей" msprop:Generator_ColumnVarNameInTable="columnКоличество_пользователей" msprop:Generator_ColumnPropNameInRow="Количество_пользователей" msprop:Generator_ColumnPropNameInTable="Количество_пользователейColumn" msprop:Generator_UserColumnName="Количество_пользователей" type="xs:short" />
+              <xs:element name="Количество_участников" msprop:Generator_ColumnVarNameInTable="columnКоличество_участников" msprop:Generator_ColumnPropNameInRow="Количество_участников" msprop:Generator_ColumnPropNameInTable="Количество_участниковColumn" msprop:Generator_UserColumnName="Количество_участников" type="xs:short" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Канал" msprop:Generator_TableClassName="КаналDataTable" msprop:Generator_TableVarName="tableКанал" msprop:Generator_TablePropName="Канал" msprop:Generator_RowDeletingName="КаналRowDeleting" msprop:Generator_RowChangingName="КаналRowChanging" msprop:Generator_RowEvHandlerName="КаналRowChangeEventHandler" msprop:Generator_RowDeletedName="КаналRowDeleted" msprop:Generator_UserTableName="Канал" msprop:Generator_RowChangedName="КаналRowChanged" msprop:Generator_RowEvArgName="КаналRowChangeEvent" msprop:Generator_RowClassName="КаналRow">
+        <xs:element name="Канал" msprop:Generator_TableClassName="КаналDataTable" msprop:Generator_TableVarName="tableКанал" msprop:Generator_RowChangedName="КаналRowChanged" msprop:Generator_TablePropName="Канал" msprop:Generator_RowDeletingName="КаналRowDeleting" msprop:Generator_RowChangingName="КаналRowChanging" msprop:Generator_RowEvHandlerName="КаналRowChangeEventHandler" msprop:Generator_RowDeletedName="КаналRowDeleted" msprop:Generator_RowClassName="КаналRow" msprop:Generator_UserTableName="Канал" msprop:Generator_RowEvArgName="КаналRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_чата" msprop:Generator_ColumnPropNameInRow="Идентификатор_чата" msprop:Generator_ColumnPropNameInTable="Идентификатор_чатаColumn" msprop:Generator_UserColumnName="Идентификатор_чата">
@@ -495,13 +570,20 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Количество_пользователей" msprop:Generator_ColumnVarNameInTable="columnКоличество_пользователей" msprop:Generator_ColumnPropNameInRow="Количество_пользователей" msprop:Generator_ColumnPropNameInTable="Количество_пользователейColumn" msprop:Generator_UserColumnName="Количество_пользователей" type="xs:short" />
+              <xs:element name="Количество_подписчиков" msprop:Generator_ColumnVarNameInTable="columnКоличество_подписчиков" msprop:Generator_ColumnPropNameInRow="Количество_подписчиков" msprop:Generator_ColumnPropNameInTable="Количество_подписчиковColumn" msprop:Generator_UserColumnName="Количество_подписчиков" type="xs:short" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Параметры_уведомлений" msprop:Generator_TableClassName="Параметры_уведомленийDataTable" msprop:Generator_TableVarName="tableПараметры_уведомлений" msprop:Generator_TablePropName="Параметры_уведомлений" msprop:Generator_RowDeletingName="Параметры_уведомленийRowDeleting" msprop:Generator_RowChangingName="Параметры_уведомленийRowChanging" msprop:Generator_RowEvHandlerName="Параметры_уведомленийRowChangeEventHandler" msprop:Generator_RowDeletedName="Параметры_уведомленийRowDeleted" msprop:Generator_UserTableName="Параметры_уведомлений" msprop:Generator_RowChangedName="Параметры_уведомленийRowChanged" msprop:Generator_RowEvArgName="Параметры_уведомленийRowChangeEvent" msprop:Generator_RowClassName="Параметры_уведомленийRow">
+        <xs:element name="Параметры_уведомлений" msprop:Generator_TableClassName="Параметры_уведомленийDataTable" msprop:Generator_TableVarName="tableПараметры_уведомлений" msprop:Generator_RowChangedName="Параметры_уведомленийRowChanged" msprop:Generator_TablePropName="Параметры_уведомлений" msprop:Generator_RowDeletingName="Параметры_уведомленийRowDeleting" msprop:Generator_RowChangingName="Параметры_уведомленийRowChanging" msprop:Generator_RowEvHandlerName="Параметры_уведомленийRowChangeEventHandler" msprop:Generator_RowDeletedName="Параметры_уведомленийRowDeleted" msprop:Generator_RowClassName="Параметры_уведомленийRow" msprop:Generator_UserTableName="Параметры_уведомлений" msprop:Generator_RowEvArgName="Параметры_уведомленийRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_чата" msprop:Generator_ColumnPropNameInRow="Идентификатор_чата" msprop:Generator_ColumnPropNameInTable="Идентификатор_чатаColumn" msprop:Generator_UserColumnName="Идентификатор_чата">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Логин" msprop:Generator_ColumnVarNameInTable="columnЛогин" msprop:Generator_ColumnPropNameInRow="Логин" msprop:Generator_ColumnPropNameInTable="ЛогинColumn" msprop:Generator_UserColumnName="Логин">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -509,27 +591,20 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_чата" msprop:Generator_ColumnPropNameInRow="Идентификатор_чата" msprop:Generator_ColumnPropNameInTable="Идентификатор_чатаColumn" msprop:Generator_UserColumnName="Идентификатор_чата">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Наличие_звука_уведомления" msprop:Generator_ColumnVarNameInTable="columnНаличие_звука_уведомления" msprop:Generator_ColumnPropNameInRow="Наличие_звука_уведомления" msprop:Generator_ColumnPropNameInTable="Наличие_звука_уведомленияColumn" msprop:Generator_UserColumnName="Наличие_звука_уведомления" type="xs:boolean" minOccurs="0" />
-              <xs:element name="Тип_оповещения" msprop:Generator_ColumnVarNameInTable="columnТип_оповещения" msprop:Generator_ColumnPropNameInRow="Тип_оповещения" msprop:Generator_ColumnPropNameInTable="Тип_оповещенияColumn" msprop:Generator_UserColumnName="Тип_оповещения" minOccurs="0">
+              <xs:element name="Тип_оповещения" msprop:Generator_ColumnVarNameInTable="columnТип_оповещения" msprop:Generator_ColumnPropNameInRow="Тип_оповещения" msprop:Generator_ColumnPropNameInTable="Тип_оповещенияColumn" msprop:Generator_UserColumnName="Тип_оповещения">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Дата_и_время_включения_уведомлений" msprop:Generator_ColumnVarNameInTable="columnДата_и_время_включения_уведомлений" msprop:Generator_ColumnPropNameInRow="Дата_и_время_включения_уведомлений" msprop:Generator_ColumnPropNameInTable="Дата_и_время_включения_уведомленийColumn" msprop:Generator_UserColumnName="Дата_и_время_включения_уведомлений" type="xs:dateTime" />
-              <xs:element name="О_чате" msdata:ReadOnly="true" msdata:Expression="Parent(FK_Параметры_уведомлений_Чат).Инфо" msprop:Generator_ColumnVarNameInTable="columnО_чате" msprop:Generator_ColumnPropNameInRow="О_чате" msprop:Generator_ColumnPropNameInTable="О_чатеColumn" msprop:Generator_UserColumnName="О_чате" type="xs:string" minOccurs="0" />
+              <xs:element name="Дата_и_время_включения_оповещений" msprop:Generator_ColumnVarNameInTable="columnДата_и_время_включения_оповещений" msprop:Generator_ColumnPropNameInRow="Дата_и_время_включения_оповещений" msprop:Generator_ColumnPropNameInTable="Дата_и_время_включения_оповещенийColumn" msprop:Generator_UserColumnName="Дата_и_время_включения_оповещений" type="xs:dateTime" />
+              <xs:element name="О_чате" msdata:ReadOnly="true" msdata:Expression="Parent(FK_Параметрыуведомлений_Чат).Инфо" msprop:Generator_ColumnVarNameInTable="columnО_чате" msprop:Generator_ColumnPropNameInRow="О_чате" msprop:Generator_ColumnPropNameInTable="О_чатеColumn" msprop:Generator_UserColumnName="О_чате" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Пользователь" msprop:Generator_TableClassName="ПользовательDataTable" msprop:Generator_TableVarName="tableПользователь" msprop:Generator_TablePropName="Пользователь" msprop:Generator_RowDeletingName="ПользовательRowDeleting" msprop:Generator_RowChangingName="ПользовательRowChanging" msprop:Generator_RowEvHandlerName="ПользовательRowChangeEventHandler" msprop:Generator_RowDeletedName="ПользовательRowDeleted" msprop:Generator_UserTableName="Пользователь" msprop:Generator_RowChangedName="ПользовательRowChanged" msprop:Generator_RowEvArgName="ПользовательRowChangeEvent" msprop:Generator_RowClassName="ПользовательRow">
+        <xs:element name="Пользователь" msprop:Generator_TableClassName="ПользовательDataTable" msprop:Generator_TableVarName="tableПользователь" msprop:Generator_RowChangedName="ПользовательRowChanged" msprop:Generator_TablePropName="Пользователь" msprop:Generator_RowDeletingName="ПользовательRowDeleting" msprop:Generator_RowChangingName="ПользовательRowChanging" msprop:Generator_RowEvHandlerName="ПользовательRowChangeEventHandler" msprop:Generator_RowDeletedName="ПользовательRowDeleted" msprop:Generator_RowClassName="ПользовательRow" msprop:Generator_UserTableName="Пользователь" msprop:Generator_RowEvArgName="ПользовательRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Логин" msprop:Generator_ColumnVarNameInTable="columnЛогин" msprop:Generator_ColumnPropNameInRow="Логин" msprop:Generator_ColumnPropNameInTable="ЛогинColumn" msprop:Generator_UserColumnName="Логин">
@@ -552,7 +627,7 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Секретный_чат" msprop:Generator_TableClassName="Секретный_чатDataTable" msprop:Generator_TableVarName="tableСекретный_чат" msprop:Generator_TablePropName="Секретный_чат" msprop:Generator_RowDeletingName="Секретный_чатRowDeleting" msprop:Generator_RowChangingName="Секретный_чатRowChanging" msprop:Generator_RowEvHandlerName="Секретный_чатRowChangeEventHandler" msprop:Generator_RowDeletedName="Секретный_чатRowDeleted" msprop:Generator_UserTableName="Секретный_чат" msprop:Generator_RowChangedName="Секретный_чатRowChanged" msprop:Generator_RowEvArgName="Секретный_чатRowChangeEvent" msprop:Generator_RowClassName="Секретный_чатRow">
+        <xs:element name="Секретный_чат" msprop:Generator_TableClassName="Секретный_чатDataTable" msprop:Generator_TableVarName="tableСекретный_чат" msprop:Generator_RowChangedName="Секретный_чатRowChanged" msprop:Generator_TablePropName="Секретный_чат" msprop:Generator_RowDeletingName="Секретный_чатRowDeleting" msprop:Generator_RowChangingName="Секретный_чатRowChanging" msprop:Generator_RowEvHandlerName="Секретный_чатRowChangeEventHandler" msprop:Generator_RowDeletedName="Секретный_чатRowDeleted" msprop:Generator_RowClassName="Секретный_чатRow" msprop:Generator_UserTableName="Секретный_чат" msprop:Generator_RowEvArgName="Секретный_чатRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_чата" msprop:Generator_ColumnPropNameInRow="Идентификатор_чата" msprop:Generator_ColumnPropNameInTable="Идентификатор_чатаColumn" msprop:Generator_UserColumnName="Идентификатор_чата">
@@ -576,17 +651,27 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Время_до_удаления_сообщения" msprop:Generator_ColumnVarNameInTable="columnВремя_до_удаления_сообщения" msprop:Generator_ColumnPropNameInRow="Время_до_удаления_сообщения" msprop:Generator_ColumnPropNameInTable="Время_до_удаления_сообщенияColumn" msprop:Generator_UserColumnName="Время_до_удаления_сообщения" type="xs:short" />
+              <xs:element name="Время_до_удаления_сообщения" msprop:Generator_ColumnVarNameInTable="columnВремя_до_удаления_сообщения" msprop:Generator_ColumnPropNameInRow="Время_до_удаления_сообщения" msprop:Generator_ColumnPropNameInTable="Время_до_удаления_сообщенияColumn" msprop:Generator_UserColumnName="Время_до_удаления_сообщения" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Сообщение" msprop:Generator_TableClassName="СообщениеDataTable" msprop:Generator_TableVarName="tableСообщение" msprop:Generator_TablePropName="Сообщение" msprop:Generator_RowDeletingName="СообщениеRowDeleting" msprop:Generator_RowChangingName="СообщениеRowChanging" msprop:Generator_RowEvHandlerName="СообщениеRowChangeEventHandler" msprop:Generator_RowDeletedName="СообщениеRowDeleted" msprop:Generator_UserTableName="Сообщение" msprop:Generator_RowChangedName="СообщениеRowChanged" msprop:Generator_RowEvArgName="СообщениеRowChangeEvent" msprop:Generator_RowClassName="СообщениеRow">
+        <xs:element name="Сообщение" msprop:Generator_TableClassName="СообщениеDataTable" msprop:Generator_TableVarName="tableСообщение" msprop:Generator_RowChangedName="СообщениеRowChanged" msprop:Generator_TablePropName="Сообщение" msprop:Generator_RowDeletingName="СообщениеRowDeleting" msprop:Generator_RowChangingName="СообщениеRowChanging" msprop:Generator_RowEvHandlerName="СообщениеRowChangeEventHandler" msprop:Generator_RowDeletedName="СообщениеRowDeleted" msprop:Generator_RowClassName="СообщениеRow" msprop:Generator_UserTableName="Сообщение" msprop:Generator_RowEvArgName="СообщениеRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="Идентификатор_сообщения" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_сообщения" msprop:Generator_ColumnPropNameInRow="Идентификатор_сообщения" msprop:Generator_ColumnPropNameInTable="Идентификатор_сообщенияColumn" msprop:Generator_UserColumnName="Идентификатор_сообщения">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Время_отправки" msprop:Generator_ColumnVarNameInTable="columnВремя_отправки" msprop:Generator_ColumnPropNameInRow="Время_отправки" msprop:Generator_ColumnPropNameInTable="Время_отправкиColumn" msprop:Generator_UserColumnName="Время_отправки" type="xs:dateTime" />
+              <xs:element name="Статус_отправки" msprop:Generator_ColumnVarNameInTable="columnСтатус_отправки" msprop:Generator_ColumnPropNameInRow="Статус_отправки" msprop:Generator_ColumnPropNameInTable="Статус_отправкиColumn" msprop:Generator_UserColumnName="Статус_отправки" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Статус_прочтения" msprop:Generator_ColumnVarNameInTable="columnСтатус_прочтения" msprop:Generator_ColumnPropNameInRow="Статус_прочтения" msprop:Generator_ColumnPropNameInTable="Статус_прочтенияColumn" msprop:Generator_UserColumnName="Статус_прочтения" type="xs:boolean" minOccurs="0" />
               <xs:element name="Содержимое" msprop:Generator_ColumnVarNameInTable="columnСодержимое" msprop:Generator_ColumnPropNameInRow="Содержимое" msprop:Generator_ColumnPropNameInTable="СодержимоеColumn" msprop:Generator_UserColumnName="Содержимое">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -604,21 +689,11 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Идентификатор_сообщения" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_сообщения" msprop:Generator_ColumnPropNameInRow="Идентификатор_сообщения" msprop:Generator_ColumnPropNameInTable="Идентификатор_сообщенияColumn" msprop:Generator_UserColumnName="Идентификатор_сообщения">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Время_отправки" msprop:Generator_ColumnVarNameInTable="columnВремя_отправки" msprop:Generator_ColumnPropNameInRow="Время_отправки" msprop:Generator_ColumnPropNameInTable="Время_отправкиColumn" msprop:Generator_UserColumnName="Время_отправки" type="xs:dateTime" />
-              <xs:element name="Статус_отправки" msprop:Generator_ColumnVarNameInTable="columnСтатус_отправки" msprop:Generator_ColumnPropNameInRow="Статус_отправки" msprop:Generator_ColumnPropNameInTable="Статус_отправкиColumn" msprop:Generator_UserColumnName="Статус_отправки" type="xs:boolean" minOccurs="0" />
-              <xs:element name="Статус_прочтения" msprop:Generator_ColumnVarNameInTable="columnСтатус_прочтения" msprop:Generator_ColumnPropNameInRow="Статус_прочтения" msprop:Generator_ColumnPropNameInTable="Статус_прочтенияColumn" msprop:Generator_UserColumnName="Статус_прочтения" type="xs:boolean" minOccurs="0" />
-              <xs:element name="Статус_доставки" msdata:ReadOnly="true" msdata:Expression="Статус_отправки AND Статус_прочтения" msprop:Generator_ColumnVarNameInTable="columnСтатус_доставки" msprop:Generator_ColumnPropNameInRow="Статус_доставки" msprop:Generator_ColumnPropNameInTable="Статус_доставкиColumn" msprop:Generator_UserColumnName="Статус_доставки" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Статус_доставки" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnСтатус_доставки" msprop:Generator_ColumnPropNameInRow="Статус_доставки" msprop:Generator_ColumnPropNameInTable="Статус_доставкиColumn" msprop:Generator_UserColumnName="Статус_доставки" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Тип_чата" msprop:Generator_TableClassName="Тип_чатаDataTable" msprop:Generator_TableVarName="tableТип_чата" msprop:Generator_TablePropName="Тип_чата" msprop:Generator_RowDeletingName="Тип_чатаRowDeleting" msprop:Generator_RowChangingName="Тип_чатаRowChanging" msprop:Generator_RowEvHandlerName="Тип_чатаRowChangeEventHandler" msprop:Generator_RowDeletedName="Тип_чатаRowDeleted" msprop:Generator_UserTableName="Тип_чата" msprop:Generator_RowChangedName="Тип_чатаRowChanged" msprop:Generator_RowEvArgName="Тип_чатаRowChangeEvent" msprop:Generator_RowClassName="Тип_чатаRow">
+        <xs:element name="Тип_чата" msprop:Generator_TableClassName="Тип_чатаDataTable" msprop:Generator_TableVarName="tableТип_чата" msprop:Generator_RowChangedName="Тип_чатаRowChanged" msprop:Generator_TablePropName="Тип_чата" msprop:Generator_RowDeletingName="Тип_чатаRowDeleting" msprop:Generator_RowChangingName="Тип_чатаRowChanging" msprop:Generator_RowEvHandlerName="Тип_чатаRowChangeEventHandler" msprop:Generator_RowDeletedName="Тип_чатаRowDeleted" msprop:Generator_RowClassName="Тип_чатаRow" msprop:Generator_UserTableName="Тип_чата" msprop:Generator_RowEvArgName="Тип_чатаRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_чата" msprop:Generator_ColumnPropNameInRow="Идентификатор_чата" msprop:Generator_ColumnPropNameInTable="Идентификатор_чатаColumn" msprop:Generator_UserColumnName="Идентификатор_чата">
@@ -638,16 +713,9 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Чат" msprop:Generator_TableClassName="ЧатDataTable" msprop:Generator_TableVarName="tableЧат" msprop:Generator_TablePropName="Чат" msprop:Generator_RowDeletingName="ЧатRowDeleting" msprop:Generator_RowChangingName="ЧатRowChanging" msprop:Generator_RowEvHandlerName="ЧатRowChangeEventHandler" msprop:Generator_RowDeletedName="ЧатRowDeleted" msprop:Generator_UserTableName="Чат" msprop:Generator_RowChangedName="ЧатRowChanged" msprop:Generator_RowEvArgName="ЧатRowChangeEvent" msprop:Generator_RowClassName="ЧатRow">
+        <xs:element name="Чат" msprop:Generator_TableClassName="ЧатDataTable" msprop:Generator_TableVarName="tableЧат" msprop:Generator_RowChangedName="ЧатRowChanged" msprop:Generator_TablePropName="Чат" msprop:Generator_RowDeletingName="ЧатRowDeleting" msprop:Generator_RowChangingName="ЧатRowChanging" msprop:Generator_RowEvHandlerName="ЧатRowChangeEventHandler" msprop:Generator_RowDeletedName="ЧатRowDeleted" msprop:Generator_RowClassName="ЧатRow" msprop:Generator_UserTableName="Чат" msprop:Generator_RowEvArgName="ЧатRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИдентификатор_чата" msprop:Generator_ColumnPropNameInRow="Идентификатор_чата" msprop:Generator_ColumnPropNameInTable="Идентификатор_чатаColumn" msprop:Generator_UserColumnName="Идентификатор_чата">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -656,7 +724,42 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Аватар_чата" msprop:Generator_ColumnVarNameInTable="columnАватар_чата" msprop:Generator_ColumnPropNameInRow="Аватар_чата" msprop:Generator_ColumnPropNameInTable="Аватар_чатаColumn" msprop:Generator_UserColumnName="Аватар_чата" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="Инфо" msdata:ReadOnly="true" msdata:Expression="Название+' '+Идентификатор_чата" msprop:Generator_ColumnVarNameInTable="columnИнфо" msprop:Generator_ColumnPropNameInRow="Инфо" msprop:Generator_ColumnPropNameInTable="ИнфоColumn" msprop:Generator_UserColumnName="Инфо" type="xs:string" minOccurs="0" />
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Инфо" msdata:ReadOnly="true" msdata:Expression="Название" msprop:Generator_ColumnVarNameInTable="columnИнфо" msprop:Generator_ColumnPropNameInRow="Инфо" msprop:Generator_ColumnPropNameInTable="ИнфоColumn" msprop:Generator_UserColumnName="Инфо" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Messenger" msprop:Generator_TableClassName="MessengerDataTable" msprop:Generator_TableVarName="tableMessenger" msprop:Generator_RowChangedName="MessengerRowChanged" msprop:Generator_TablePropName="Messenger" msprop:Generator_RowDeletingName="MessengerRowDeleting" msprop:Generator_RowChangingName="MessengerRowChanging" msprop:Generator_RowEvHandlerName="MessengerRowChangeEventHandler" msprop:Generator_RowDeletedName="MessengerRowDeleted" msprop:Generator_RowClassName="MessengerRow" msprop:Generator_UserTableName="Messenger" msprop:Generator_RowEvArgName="MessengerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Messenger_Result" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMessenger_Result" msprop:Generator_ColumnPropNameInRow="Messenger_Result" msprop:Generator_ColumnPropNameInTable="Messenger_ResultColumn" msprop:Generator_UserColumnName="Messenger_Result" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Messenger2" msprop:Generator_TableClassName="Messenger2DataTable" msprop:Generator_TableVarName="tableMessenger2" msprop:Generator_RowChangedName="Messenger2RowChanged" msprop:Generator_TablePropName="Messenger2" msprop:Generator_RowDeletingName="Messenger2RowDeleting" msprop:Generator_RowChangingName="Messenger2RowChanging" msprop:Generator_RowEvHandlerName="Messenger2RowChangeEventHandler" msprop:Generator_RowDeletedName="Messenger2RowDeleted" msprop:Generator_RowClassName="Messenger2Row" msprop:Generator_UserTableName="Messenger2" msprop:Generator_RowEvArgName="Messenger2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fn_Messenger2_Result" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfn_Messenger2_Result" msprop:Generator_ColumnPropNameInRow="fn_Messenger2_Result" msprop:Generator_ColumnPropNameInTable="fn_Messenger2_ResultColumn" msprop:Generator_UserColumnName="fn_Messenger2_Result" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Messenger3" msprop:Generator_TableClassName="Messenger3DataTable" msprop:Generator_TableVarName="tableMessenger3" msprop:Generator_RowChangedName="Messenger3RowChanged" msprop:Generator_TablePropName="Messenger3" msprop:Generator_RowDeletingName="Messenger3RowDeleting" msprop:Generator_RowChangingName="Messenger3RowChanging" msprop:Generator_RowEvHandlerName="Messenger3RowChangeEventHandler" msprop:Generator_RowDeletedName="Messenger3RowDeleted" msprop:Generator_RowClassName="Messenger3Row" msprop:Generator_UserTableName="Messenger3" msprop:Generator_RowEvArgName="Messenger3RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Messenger3_Result" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMessenger3_Result" msprop:Generator_ColumnPropNameInRow="Messenger3_Result" msprop:Generator_ColumnPropNameInTable="Messenger3_ResultColumn" msprop:Generator_UserColumnName="Messenger3_Result" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Messenger4" msprop:Generator_TableClassName="Messenger4DataTable" msprop:Generator_TableVarName="tableMessenger4" msprop:Generator_RowChangedName="Messenger4RowChanged" msprop:Generator_TablePropName="Messenger4" msprop:Generator_RowDeletingName="Messenger4RowDeleting" msprop:Generator_RowChangingName="Messenger4RowChanging" msprop:Generator_RowEvHandlerName="Messenger4RowChangeEventHandler" msprop:Generator_RowDeletedName="Messenger4RowDeleted" msprop:Generator_RowClassName="Messenger4Row" msprop:Generator_UserTableName="Messenger4" msprop:Generator_RowEvArgName="Messenger4RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Messenger4_Result" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMessenger4_Result" msprop:Generator_ColumnPropNameInRow="Messenger4_Result" msprop:Generator_ColumnPropNameInTable="Messenger4_ResultColumn" msprop:Generator_UserColumnName="Messenger4_Result" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -698,14 +801,14 @@ SELECT Идентификатор_чата, Аватар_чата, Назван�
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Параметры_x0020_уведомлений_Пользователь" msdata:parent="Пользователь" msdata:child="Параметры_уведомлений" msdata:parentkey="Логин" msdata:childkey="Логин" msprop:Generator_UserChildTable="Параметры_уведомлений" msprop:Generator_ChildPropName="GetПараметры_уведомленийRows" msprop:Generator_UserRelationName="FK_Параметры уведомлений_Пользователь" msprop:Generator_RelationVarName="relationFK_Параметры_уведомлений_Пользователь" msprop:Generator_UserParentTable="Пользователь" msprop:Generator_ParentPropName="ПользовательRow" />
-      <msdata:Relationship name="FK_Сообщение_Пользователь" msdata:parent="Пользователь" msdata:child="Сообщение" msdata:parentkey="Логин" msdata:childkey="Отправитель" msprop:Generator_UserChildTable="Сообщение" msprop:Generator_ChildPropName="GetСообщениеRows" msprop:Generator_UserRelationName="FK_Сообщение_Пользователь" msprop:Generator_ParentPropName="ПользовательRow" msprop:Generator_RelationVarName="relationFK_Сообщение_Пользователь" msprop:Generator_UserParentTable="Пользователь" />
       <msdata:Relationship name="FK_Беседа_Тип_x0020_чата" msdata:parent="Тип_чата" msdata:child="Беседа" msdata:parentkey="Идентификатор_чата" msdata:childkey="Идентификатор_чата" msprop:Generator_UserChildTable="Беседа" msprop:Generator_ChildPropName="GetБеседаRows" msprop:Generator_UserRelationName="FK_Беседа_Тип чата" msprop:Generator_ParentPropName="Тип_чатаRow" msprop:Generator_RelationVarName="relationFK_Беседа_Тип_чата" msprop:Generator_UserParentTable="Тип_чата" />
       <msdata:Relationship name="FK_Канал_Тип_x0020_чата" msdata:parent="Тип_чата" msdata:child="Канал" msdata:parentkey="Идентификатор_чата" msdata:childkey="Идентификатор_чата" msprop:Generator_UserChildTable="Канал" msprop:Generator_ChildPropName="GetКаналRows" msprop:Generator_UserRelationName="FK_Канал_Тип чата" msprop:Generator_ParentPropName="Тип_чатаRow" msprop:Generator_RelationVarName="relationFK_Канал_Тип_чата" msprop:Generator_UserParentTable="Тип_чата" />
-      <msdata:Relationship name="FK_Секретный_x0020_чат_Тип_x0020_чата" msdata:parent="Тип_чата" msdata:child="Секретный_чат" msdata:parentkey="Идентификатор_чата" msdata:childkey="Идентификатор_чата" msprop:Generator_UserChildTable="Секретный_чат" msprop:Generator_ChildPropName="GetСекретный_чатRows" msprop:Generator_UserRelationName="FK_Секретный чат_Тип чата" msprop:Generator_ParentPropName="Тип_чатаRow" msprop:Generator_RelationVarName="relationFK_Секретный_чат_Тип_чата" msprop:Generator_UserParentTable="Тип_чата" />
+      <msdata:Relationship name="FK_Параметрыуведомлений_Пользователь" msdata:parent="Пользователь" msdata:child="Параметры_уведомлений" msdata:parentkey="Логин" msdata:childkey="Логин" msprop:Generator_UserChildTable="Параметры_уведомлений" msprop:Generator_ChildPropName="GetПараметры_уведомленийRows" msprop:Generator_UserRelationName="FK_Параметрыуведомлений_Пользователь" msprop:Generator_ParentPropName="ПользовательRow" msprop:Generator_RelationVarName="relationFK_Параметрыуведомлений_Пользователь" msprop:Generator_UserParentTable="Пользователь" />
+      <msdata:Relationship name="FK_Параметрыуведомлений_Чат" msdata:parent="Чат" msdata:child="Параметры_уведомлений" msdata:parentkey="Идентификатор_чата" msdata:childkey="Идентификатор_чата" msprop:Generator_UserChildTable="Параметры_уведомлений" msprop:Generator_ChildPropName="GetПараметры_уведомленийRows" msprop:Generator_UserRelationName="FK_Параметрыуведомлений_Чат" msprop:Generator_ParentPropName="ЧатRow" msprop:Generator_RelationVarName="relationFK_Параметрыуведомлений_Чат" msprop:Generator_UserParentTable="Чат" />
+      <msdata:Relationship name="FK_Секретный_чат_Тип_чата" msdata:parent="Тип_чата" msdata:child="Секретный_чат" msdata:parentkey="Идентификатор_чата" msdata:childkey="Идентификатор_чата" msprop:Generator_UserChildTable="Секретный_чат" msprop:Generator_ChildPropName="GetСекретный_чатRows" msprop:Generator_UserRelationName="FK_Секретный_чат_Тип_чата" msprop:Generator_ParentPropName="Тип_чатаRow" msprop:Generator_RelationVarName="relationFK_Секретный_чат_Тип_чата" msprop:Generator_UserParentTable="Тип_чата" />
+      <msdata:Relationship name="FK_Сообщение_Пользователь" msdata:parent="Пользователь" msdata:child="Сообщение" msdata:parentkey="Логин" msdata:childkey="Отправитель" msprop:Generator_UserChildTable="Сообщение" msprop:Generator_ChildPropName="GetСообщениеRows" msprop:Generator_UserRelationName="FK_Сообщение_Пользователь" msprop:Generator_RelationVarName="relationFK_Сообщение_Пользователь" msprop:Generator_UserParentTable="Пользователь" msprop:Generator_ParentPropName="ПользовательRow" />
       <msdata:Relationship name="FK_Сообщение_Чат" msdata:parent="Чат" msdata:child="Сообщение" msdata:parentkey="Идентификатор_чата" msdata:childkey="Чат" msprop:Generator_UserChildTable="Сообщение" msprop:Generator_ChildPropName="GetСообщениеRows" msprop:Generator_UserRelationName="FK_Сообщение_Чат" msprop:Generator_ParentPropName="ЧатRow" msprop:Generator_RelationVarName="relationFK_Сообщение_Чат" msprop:Generator_UserParentTable="Чат" />
       <msdata:Relationship name="FK_Тип_x0020_чата_Чат" msdata:parent="Чат" msdata:child="Тип_чата" msdata:parentkey="Идентификатор_чата" msdata:childkey="Идентификатор_чата" msprop:Generator_UserChildTable="Тип_чата" msprop:Generator_ChildPropName="GetТип_чатаRows" msprop:Generator_UserRelationName="FK_Тип чата_Чат" msprop:Generator_ParentPropName="ЧатRow" msprop:Generator_RelationVarName="relationFK_Тип_чата_Чат" msprop:Generator_UserParentTable="Чат" />
-      <msdata:Relationship name="FK_Параметры_уведомлений_Чат" msdata:parent="Чат" msdata:child="Параметры_уведомлений" msdata:parentkey="Идентификатор_чата" msdata:childkey="Идентификатор_чата" msprop:Generator_UserChildTable="Параметры_уведомлений" msprop:Generator_ChildPropName="GetПараметры_уведомленийRows" msprop:Generator_UserRelationName="FK_Параметры_уведомлений_Чат" msprop:Generator_ParentPropName="ЧатRow" msprop:Generator_RelationVarName="relationFK_Параметры_уведомлений_Чат" msprop:Generator_UserParentTable="Чат" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

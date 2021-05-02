@@ -33,6 +33,8 @@ namespace MessengerBDApp
 
         private void FormNotificationSettings_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'messengerDataSet.Чат' table. You can move, or remove it, as needed.
+            this.чатTableAdapter.Fill(this.messengerDataSet.Чат);
             // TODO: This line of code loads data into the 'messengerDataSet.Параметры_уведомлений' table. You can move, or remove it, as needed.
             this.параметры_уведомленийTableAdapter.Fill(this.messengerDataSet.Параметры_уведомлений);
 

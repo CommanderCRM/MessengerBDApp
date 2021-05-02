@@ -48,17 +48,20 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.параметры_уведомленийBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.параметры_уведомленийDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.чатBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.чатTableAdapter = new MessengerBDApp.MessengerDataSetTableAdapters.ЧатTableAdapter();
+            this.идентификаторчатаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.логинDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.наличиезвукауведомленияDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.типоповещенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаивремявключенияоповещенийDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.О_чате = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.messengerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.параметры_уведомленийBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.параметры_уведомленийBindingNavigator)).BeginInit();
             this.параметры_уведомленийBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.параметры_уведомленийDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.чатBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // messengerDataSet
@@ -68,7 +71,7 @@
             // 
             // параметры_уведомленийBindingSource
             // 
-            this.параметры_уведомленийBindingSource.DataMember = "Параметры уведомлений";
+            this.параметры_уведомленийBindingSource.DataMember = "Параметры_уведомлений";
             this.параметры_уведомленийBindingSource.DataSource = this.messengerDataSet;
             // 
             // параметры_уведомленийTableAdapter
@@ -217,11 +220,11 @@
             this.параметры_уведомленийDataGridView.AutoGenerateColumns = false;
             this.параметры_уведомленийDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.параметры_уведомленийDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn2,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
+            this.идентификаторчатаDataGridViewTextBoxColumn,
+            this.логинDataGridViewTextBoxColumn,
+            this.наличиезвукауведомленияDataGridViewCheckBoxColumn,
+            this.типоповещенияDataGridViewTextBoxColumn,
+            this.датаивремявключенияоповещенийDataGridViewTextBoxColumn,
             this.О_чате});
             this.параметры_уведомленийDataGridView.DataSource = this.параметры_уведомленийBindingSource;
             this.параметры_уведомленийDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -231,38 +234,44 @@
             this.параметры_уведомленийDataGridView.TabIndex = 1;
             this.параметры_уведомленийDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.параметры_уведомленийDataGridView_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn2
+            // чатBindingSource
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Логин";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Логин";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.чатBindingSource.DataMember = "Чат";
+            this.чатBindingSource.DataSource = this.messengerDataSet;
             // 
-            // dataGridViewTextBoxColumn5
+            // чатTableAdapter
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Идентификатор_чата";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Идентификатор_чата";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 200;
+            this.чатTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewCheckBoxColumn2
+            // идентификаторчатаDataGridViewTextBoxColumn
             // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Наличие_звука_уведомления";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Наличие_звука_уведомления";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Width = 200;
+            this.идентификаторчатаDataGridViewTextBoxColumn.DataPropertyName = "Идентификатор_чата";
+            this.идентификаторчатаDataGridViewTextBoxColumn.HeaderText = "Идентификатор_чата";
+            this.идентификаторчатаDataGridViewTextBoxColumn.Name = "идентификаторчатаDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn6
+            // логинDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Тип_оповещения";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Тип_оповещения";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.логинDataGridViewTextBoxColumn.DataPropertyName = "Логин";
+            this.логинDataGridViewTextBoxColumn.HeaderText = "Логин";
+            this.логинDataGridViewTextBoxColumn.Name = "логинDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn7
+            // наличиезвукауведомленияDataGridViewCheckBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Дата_и_время_включения_уведомлений";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Дата_и_время_включения_уведомлений";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 250;
+            this.наличиезвукауведомленияDataGridViewCheckBoxColumn.DataPropertyName = "Наличие_звука_уведомления";
+            this.наличиезвукауведомленияDataGridViewCheckBoxColumn.HeaderText = "Наличие_звука_уведомления";
+            this.наличиезвукауведомленияDataGridViewCheckBoxColumn.Name = "наличиезвукауведомленияDataGridViewCheckBoxColumn";
+            // 
+            // типоповещенияDataGridViewTextBoxColumn
+            // 
+            this.типоповещенияDataGridViewTextBoxColumn.DataPropertyName = "Тип_оповещения";
+            this.типоповещенияDataGridViewTextBoxColumn.HeaderText = "Тип_оповещения";
+            this.типоповещенияDataGridViewTextBoxColumn.Name = "типоповещенияDataGridViewTextBoxColumn";
+            // 
+            // датаивремявключенияоповещенийDataGridViewTextBoxColumn
+            // 
+            this.датаивремявключенияоповещенийDataGridViewTextBoxColumn.DataPropertyName = "Дата_и_время_включения_оповещений";
+            this.датаивремявключенияоповещенийDataGridViewTextBoxColumn.HeaderText = "Дата_и_время_включения_оповещений";
+            this.датаивремявключенияоповещенийDataGridViewTextBoxColumn.Name = "датаивремявключенияоповещенийDataGridViewTextBoxColumn";
             // 
             // О_чате
             // 
@@ -289,6 +298,7 @@
             this.параметры_уведомленийBindingNavigator.ResumeLayout(false);
             this.параметры_уведомленийBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.параметры_уведомленийDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.чатBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,11 +328,14 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridView параметры_уведомленийDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.BindingSource чатBindingSource;
+        private MessengerDataSetTableAdapters.ЧатTableAdapter чатTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn идентификаторчатаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn логинDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn наличиезвукауведомленияDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn типоповещенияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаивремявключенияоповещенийDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn О_чате;
     }
 }

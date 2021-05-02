@@ -390,7 +390,7 @@
             // 
             // параметры_уведомленийBindingSource
             // 
-            this.параметры_уведомленийBindingSource.DataMember = "FK_Параметры уведомлений_Пользователь";
+            this.параметры_уведомленийBindingSource.DataMember = "FK_Параметрыуведомлений_Пользователь";
             this.параметры_уведомленийBindingSource.DataSource = this.пользовательBindingSource;
             // 
             // UsersNotifSetNavigator1

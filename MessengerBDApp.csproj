@@ -161,8 +161,8 @@
     </None>
     <None Include="MessengerDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MessengerDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>MessengerDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="MessengerDataSet.xss">
       <DependentUpon>MessengerDataSet.xsd</DependentUpon>

@@ -72,7 +72,7 @@
             // 
             // секретный_чатBindingSource
             // 
-            this.секретный_чатBindingSource.DataMember = "Секретный чат";
+            this.секретный_чатBindingSource.DataMember = "Секретный_чат";
             this.секретный_чатBindingSource.DataSource = this.messengerDataSet;
             // 
             // секретный_чатTableAdapter
