@@ -13,9 +13,23 @@ namespace MessengerBDApp
 {
     public partial class FormMain : Form
     {
-        public FormMain()
+        private readonly byte[] _userNameBytes;
+        private readonly byte[] _userPasswordBytes;
+
+        public FormMain(byte[] pNameBytes, byte[] pPasswordBytes)
         {
             InitializeComponent();
+            _userNameBytes = pNameBytes;
+            _userPasswordBytes = pPasswordBytes;
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            var ops = new LoginLibrary.DataClasses.DataClasses.DataOperations(
+                _userNameBytes,
+                _userPasswordBytes,
+                @"CRM\SQLEXPRESS",
+                "Messenger");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -41,6 +55,7 @@ namespace MessengerBDApp
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Settings.Default.Save();
+            Application.ExitThread();
         }
 
         private void секретныеЧатыToolStripMenuItem_Click(object sender, EventArgs e)
