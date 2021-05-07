@@ -137,7 +137,7 @@ namespace MessengerBDApp
             string sqlSelect = "";
 
             if (radioButtonCorrelated.Checked)
-                sqlSelect = @"SELECT Логин FROM Пользователь WHERE Логин = @login, SELECT Отправитель FROM Сообщение WHERE Отправитель IN (SELECT Логин FROM Пользователь WHERE Логин = Отправитель) = @login";
+                sqlSelect = @"SELECT Логин FROM Пользователь WHERE Логин = @login UNION SELECT Отправитель FROM Сообщение WHERE Отправитель IN (SELECT Логин FROM Пользователь WHERE Логин = Отправитель)";
             else
             if (radioButtonNoCorrelated.Checked)
                 sqlSelect = @"SELECT * FROM Пользователь WHERE Логин = @login";
@@ -185,19 +185,24 @@ namespace MessengerBDApp
 
         void UpdateChat()
         {
-            string sqlUpdate = "UPDATE Секретный_чат SET {0} WHERE Идентификатор_чата = @id"; 
+            string sqlUpdate = "UPDATE Секретный_чат SET {0} [Идентификатор_чата] = @id"; 
             SqlConnection connection = new SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             string sqlValues = "";
             if (!String.IsNullOrEmpty(comboBoxCType.Text))
-                sqlValues += "Тип_шифрования=@CType,";
+                sqlValues += "Тип_шифрования=@CType";
             if (!String.IsNullOrEmpty(textBoxCKey.Text))
-                sqlValues += "Ключ_шифрования=@CKey,";
+                sqlValues += "Ключ_шифрования=@CKey";
             if (!String.IsNullOrEmpty(textBoxCTime.Text))
-                sqlValues += "Время_до_удаления_сообщения=@CType,";
+                sqlValues += "Время_до_удаления_сообщения=@CTime";
             command.CommandText = String.Format(sqlUpdate, sqlValues);
-            command.Parameters.AddWithValue("@id", textBoxSCID.Text);
+            if (!String.IsNullOrEmpty(comboBoxCType.Text))
+                command.Parameters.AddWithValue("@CType", comboBoxCType.Text);
+            if (!String.IsNullOrEmpty(textBoxCKey.Text))
+                command.Parameters.AddWithValue("@CKey", textBoxCKey.Text);
+            if (!String.IsNullOrEmpty(textBoxCTime.Text))
+                command.Parameters.AddWithValue("@CTime", textBoxCTime.Text);
             try
             {
                 command.ExecuteNonQuery();
