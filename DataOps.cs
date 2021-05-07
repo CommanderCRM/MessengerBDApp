@@ -12,7 +12,7 @@ namespace LoginLibrary.DataClasses
 
         public class DataOperations : BaseExceptionProperties
         {
-            private string ConnectionString;
+            public string ConnectionString;
 
             public DataOperations(byte[] pNameBytes, byte[] pPasswordBytes, string pServerName, string pCatalogName)
             {

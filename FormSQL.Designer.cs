@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSQL));
             this.tabControlSQL = new System.Windows.Forms.TabControl();
             this.tabPageExample = new System.Windows.Forms.TabPage();
             this.dataGridViewSelect = new System.Windows.Forms.DataGridView();
@@ -73,6 +74,9 @@
             this.labelSCID = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.tabControlSQL.SuspendLayout();
             this.tabPageExample.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelect)).BeginInit();
@@ -126,6 +130,7 @@
             // 
             // groupBoxSelect
             // 
+            this.groupBoxSelect.Controls.Add(this.buttonPrint);
             this.groupBoxSelect.Controls.Add(this.radioButtonNotifSet);
             this.groupBoxSelect.Controls.Add(this.radioButtonChats);
             this.groupBoxSelect.Controls.Add(this.radioButtonUsers);
@@ -140,7 +145,7 @@
             // radioButtonNotifSet
             // 
             this.radioButtonNotifSet.AutoSize = true;
-            this.radioButtonNotifSet.Location = new System.Drawing.Point(626, 48);
+            this.radioButtonNotifSet.Location = new System.Drawing.Point(626, 34);
             this.radioButtonNotifSet.Name = "radioButtonNotifSet";
             this.radioButtonNotifSet.Size = new System.Drawing.Size(154, 17);
             this.radioButtonNotifSet.TabIndex = 2;
@@ -151,7 +156,7 @@
             // radioButtonChats
             // 
             this.radioButtonChats.AutoSize = true;
-            this.radioButtonChats.Location = new System.Drawing.Point(350, 48);
+            this.radioButtonChats.Location = new System.Drawing.Point(340, 34);
             this.radioButtonChats.Name = "radioButtonChats";
             this.radioButtonChats.Size = new System.Drawing.Size(52, 17);
             this.radioButtonChats.TabIndex = 1;
@@ -162,7 +167,7 @@
             // radioButtonUsers
             // 
             this.radioButtonUsers.AutoSize = true;
-            this.radioButtonUsers.Location = new System.Drawing.Point(7, 48);
+            this.radioButtonUsers.Location = new System.Drawing.Point(6, 34);
             this.radioButtonUsers.Name = "radioButtonUsers";
             this.radioButtonUsers.Size = new System.Drawing.Size(98, 17);
             this.radioButtonUsers.TabIndex = 0;
@@ -565,6 +570,30 @@
             this.radioButton1.Text = "Добавление секретного чата";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // buttonPrint
+            // 
+            this.buttonPrint.Location = new System.Drawing.Point(327, 71);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(75, 23);
+            this.buttonPrint.TabIndex = 3;
+            this.buttonPrint.Text = "Печать";
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // FormSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,5 +674,8 @@
         private System.Windows.Forms.Button buttonExecuteDML;
         private System.Windows.Forms.Button buttonSelectChats;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonPrint;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

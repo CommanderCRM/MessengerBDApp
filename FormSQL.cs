@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Drawing.Printing;
+using System.Drawing;
 
 namespace MessengerBDApp
 {
@@ -14,22 +16,15 @@ namespace MessengerBDApp
 
         DataTable FillDataGridView(string sqlSelect)
         {
-            //Создаем объект connection класса SqlConnection для соединения с БД
-            //CafeConnectionString – строка описания соединения с источником данных
+
 
             SqlConnection connection = new
             SqlConnection(Properties.Settings.Default.MessengerConnectionString1);
-            //Создаем объект command для SQL команды
             SqlCommand command = connection.CreateCommand();
-            //Заносим текст SQL запроса через параметр sqlSelect
             command.CommandText = sqlSelect;
-            //Создаем объект adapter класса SqlDataAdapter
             SqlDataAdapter adapter = new SqlDataAdapter();
-            //Задаем адаптеру нужную команду, в данном случае команду Select
             adapter.SelectCommand = command;
-            //Создаем объект table для последующего отображения результата запроса
-             DataTable table = new DataTable();
-            //заполним набор данных результатом запроса
+            DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
         }
@@ -259,6 +254,35 @@ namespace MessengerBDApp
         private void labelChat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            Panel panel = new Panel();
+            this.Controls.Add(panel);
+            Graphics grp = panel.CreateGraphics();
+            Size formSize = this.ClientSize;
+            bitmap = new Bitmap(formSize.Width, formSize.Height, grp);
+            grp = Graphics.FromImage(bitmap);
+            Point panelLocation = PointToScreen(panel.Location);
+            grp.CopyFromScreen(panelLocation.X, panelLocation.Y, 0, 0, formSize);
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.ShowDialog();
+        }
+        Bitmap bitmap;
+        private void CaptureScreen()
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            Size s = this.Size;
+            bitmap = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(bitmap);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
         }
     }
 }
