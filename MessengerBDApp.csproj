@@ -78,6 +78,18 @@
     <Compile Include="FormDialog.Designer.cs">
       <DependentUpon>FormDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGroupChatAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGroupChatAdmin.Designer.cs">
+      <DependentUpon>FormGroupChatAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMessageList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,18 @@
     </Compile>
     <Compile Include="FormSQL.Designer.cs">
       <DependentUpon>FormSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsersForUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsersForUser.Designer.cs">
+      <DependentUpon>FormUsersForUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsersForCA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsersForCA.Designer.cs">
+      <DependentUpon>FormUsersForCA.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUsers.cs">
       <SubType>Form</SubType>
@@ -142,6 +166,12 @@
     <EmbeddedResource Include="FormDialog.resx">
       <DependentUpon>FormDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGroupChatAdmin.resx">
+      <DependentUpon>FormGroupChatAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMessageList.resx">
       <DependentUpon>FormMessageList.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSQL.resx">
       <DependentUpon>FormSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsersForUser.resx">
+      <DependentUpon>FormUsersForUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsersForCA.resx">
+      <DependentUpon>FormUsersForCA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>

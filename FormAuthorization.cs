@@ -33,11 +33,23 @@ namespace MessengerBDApp
 
                 var results = ops.SqlCredentialLogin(userNameBytes, passwordBytes);
 
-                if (results.Success)
+                if (results.Success & usernameTextBox.Text == "admin" | usernameTextBox.Text == "mod")
                 {
                     Hide();
                     var mainForm = new FormMain(userNameBytes, passwordBytes);
                     mainForm.ShowDialog();
+                }
+                else if (results.Success & usernameTextBox.Text == "user")
+                {
+                    Hide();
+                    var userForm = new FormUser(userNameBytes, passwordBytes);
+                    userForm.ShowDialog();
+                }
+                else if (results.Success & usernameTextBox.Text == "chatadmin")
+                {
+                    Hide();
+                    var gcaForm = new FormGroupChatAdmin(userNameBytes, passwordBytes);
+                    gcaForm.ShowDialog();
                 }
                 else
                 {

@@ -1,6 +1,6 @@
 ﻿namespace MessengerBDApp
 {
-    partial class FormMain
+    partial class FormGroupChatAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGroupChatAdmin));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +41,6 @@
             this.секретныеЧатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.типыЧатовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.чатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.параметрыУведомленийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сообщенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.файлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,11 +65,9 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonSQL = new System.Windows.Forms.ToolStripButton();
+            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.menuStripMain.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -132,7 +128,6 @@
             this.секретныеЧатыToolStripMenuItem,
             this.типыЧатовToolStripMenuItem,
             this.чатыToolStripMenuItem,
-            this.параметрыУведомленийToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.сообщенияToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
@@ -143,7 +138,7 @@
             // 
             this.беседыToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_дискуссия_в_комментариях_80;
             this.беседыToolStripMenuItem.Name = "беседыToolStripMenuItem";
-            this.беседыToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.беседыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.беседыToolStripMenuItem.Text = "Беседы";
             this.беседыToolStripMenuItem.Click += new System.EventHandler(this.беседыToolStripMenuItem_Click);
             // 
@@ -151,7 +146,7 @@
             // 
             this.каналыToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_телеграмма_app_30;
             this.каналыToolStripMenuItem.Name = "каналыToolStripMenuItem";
-            this.каналыToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.каналыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.каналыToolStripMenuItem.Text = "Каналы";
             this.каналыToolStripMenuItem.Click += new System.EventHandler(this.каналыToolStripMenuItem_Click);
             // 
@@ -159,7 +154,7 @@
             // 
             this.секретныеЧатыToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_let_s_encrypt_50;
             this.секретныеЧатыToolStripMenuItem.Name = "секретныеЧатыToolStripMenuItem";
-            this.секретныеЧатыToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.секретныеЧатыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.секретныеЧатыToolStripMenuItem.Text = "Секретные чаты";
             this.секретныеЧатыToolStripMenuItem.Click += new System.EventHandler(this.секретныеЧатыToolStripMenuItem_Click);
             // 
@@ -167,7 +162,7 @@
             // 
             this.типыЧатовToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_настройка_вида_50;
             this.типыЧатовToolStripMenuItem.Name = "типыЧатовToolStripMenuItem";
-            this.типыЧатовToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.типыЧатовToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.типыЧатовToolStripMenuItem.Text = "Типы чатов";
             this.типыЧатовToolStripMenuItem.Click += new System.EventHandler(this.типыЧатовToolStripMenuItem_Click);
             // 
@@ -175,31 +170,15 @@
             // 
             this.чатыToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_чат_50;
             this.чатыToolStripMenuItem.Name = "чатыToolStripMenuItem";
-            this.чатыToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.чатыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.чатыToolStripMenuItem.Text = "Чаты";
             this.чатыToolStripMenuItem.Click += new System.EventHandler(this.чатыToolStripMenuItem_Click);
-            // 
-            // параметрыУведомленийToolStripMenuItem
-            // 
-            this.параметрыУведомленийToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_настройки_24;
-            this.параметрыУведомленийToolStripMenuItem.Name = "параметрыУведомленийToolStripMenuItem";
-            this.параметрыУведомленийToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.параметрыУведомленийToolStripMenuItem.Text = "Параметры уведомлений";
-            this.параметрыУведомленийToolStripMenuItem.Click += new System.EventHandler(this.параметрыУведомленийToolStripMenuItem_Click);
-            // 
-            // пользователиToolStripMenuItem
-            // 
-            this.пользователиToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_пользователь_50;
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.пользователиToolStripMenuItem.Text = "Пользователи";
-            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // сообщенияToolStripMenuItem
             // 
             this.сообщенияToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_сообщение_64;
             this.сообщенияToolStripMenuItem.Name = "сообщенияToolStripMenuItem";
-            this.сообщенияToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.сообщенияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сообщенияToolStripMenuItem.Text = "Сообщения";
             this.сообщенияToolStripMenuItem.Click += new System.EventHandler(this.сообщенияToolStripMenuItem_Click);
             // 
@@ -337,11 +316,8 @@
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripButton7,
-            this.toolStripButton8,
             this.toolStripButton9,
-            this.toolStripButton10,
-            this.toolStripSeparator4,
-            this.toolStripButtonSQL});
+            this.toolStripButton10});
             this.toolStripMain.Location = new System.Drawing.Point(0, 24);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -432,16 +408,24 @@
             this.toolStripButton7.ToolTipText = "Чаты";
             this.toolStripButton7.Click += new System.EventHandler(this.чатыToolStripMenuItem_Click);
             // 
-            // toolStripButton8
+            // toolStripButton10
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = global::MessengerBDApp.Properties.Resources.icons8_настройки_24;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "toolStripButton8";
-            this.toolStripButton8.ToolTipText = "Параметры уведомлений";
-            this.toolStripButton8.Click += new System.EventHandler(this.параметрыУведомленийToolStripMenuItem_Click);
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Image = global::MessengerBDApp.Properties.Resources.icons8_сообщение_64;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton10.Text = "toolStripButton10";
+            this.toolStripButton10.ToolTipText = "Сообщения";
+            this.toolStripButton10.Click += new System.EventHandler(this.сообщенияToolStripMenuItem_Click);
+            // 
+            // пользователиToolStripMenuItem
+            // 
+            this.пользователиToolStripMenuItem.Image = global::MessengerBDApp.Properties.Resources.icons8_пользователь_50;
+            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // toolStripButton9
             // 
@@ -454,33 +438,7 @@
             this.toolStripButton9.ToolTipText = "Пользователи";
             this.toolStripButton9.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = global::MessengerBDApp.Properties.Resources.icons8_сообщение_64;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton10.Text = "toolStripButton10";
-            this.toolStripButton10.ToolTipText = "Сообщения";
-            this.toolStripButton10.Click += new System.EventHandler(this.сообщенияToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButtonSQL
-            // 
-            this.toolStripButtonSQL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSQL.Image = global::MessengerBDApp.Properties.Resources.icons8_база_данных_50;
-            this.toolStripButtonSQL.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSQL.Name = "toolStripButtonSQL";
-            this.toolStripButtonSQL.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSQL.Text = "Запросы SQL";
-            this.toolStripButtonSQL.Click += new System.EventHandler(this.toolStripButtonSQL_Click);
-            // 
-            // FormMain
+            // FormGroupChatAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -493,8 +451,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = global::MessengerBDApp.Properties.Settings.Default.FormPos;
             this.MainMenuStrip = this.menuStripMain;
-            this.Name = "FormMain";
-            this.Text = "Администратор/модератор мессенджера";
+            this.Name = "FormGroupChatAdmin";
+            this.Text = "Администратор групповых чатов";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.menuStripMain.ResumeLayout(false);
@@ -520,8 +478,6 @@
         private System.Windows.Forms.ToolStripMenuItem секретныеЧатыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem типыЧатовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem чатыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem параметрыУведомленийToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сообщенияToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem1;
@@ -546,11 +502,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSQL;
+        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
     }
 }
 
